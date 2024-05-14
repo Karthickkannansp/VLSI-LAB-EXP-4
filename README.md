@@ -135,26 +135,57 @@ endmodule
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-4/assets/6987778/a1fc5f68-aafb-49a1-93d2-779529f525fa)
 
-# UPDOWN COUNTER:
+# UP COUNTER:
+# LOGIC DIAGRAN:
+
+![image](https://github.com/Karthickkannansp/VLSI-LAB-EXP-4/assets/161430429/350016b4-bbdf-4c39-8667-ed3c48f6a870)
 
 # VERILOG CODE:
 ```
-module updown(clk,rst,updown,out);
-input clk,rst,updown;
-output reg [3:0]out;
+module upcounter(clk,rst,count);
+input clk,rst;
+output[3:0]count;
+reg[3:0]count;
 always@(posedge clk)
 begin
-if (rst==1)
-out=4'b0000;
-else if(updown==1)
-out=out+1;
+if(rst)
+count<=4'b0;
 else
-out=out-1;
+count<=count+1;
 end
 endmodule
+
 ```
 # OUTPUT WAVEFORM:
-![image](https://github.com/Karthickkannansp/VLSI-LAB-EXP-4/assets/161430429/13fba4e3-54cf-4192-ba7a-48c85886a372)
+![image](https://github.com/Karthickkannansp/VLSI-LAB-EXP-4/assets/161430429/b85b6da1-7858-4c67-a234-321a85462abd)
+
+# DOWN COUNTER:
+
+# LOGIC DIAGRAM:
+![image](https://github.com/Karthickkannansp/VLSI-LAB-EXP-4/assets/161430429/6d3202b5-2ac9-4f3e-a152-11d332d3517d)
+
+# VERILOG CODE:
+```
+module downcounter(clk,rst,count);
+input clk,rst;
+output[3:0]count;
+reg[3:0]count;
+always@(posedge clk)
+begin
+if(rst)
+count<=4'b0;
+else
+count <=count-1;
+end
+endmodule
+
+```
+# OUTPUT WAVEFORM:
+![image](https://github.com/Karthickkannansp/VLSI-LAB-EXP-4/assets/161430429/ba4e5ee3-3021-440b-b38f-4bb1cbe2076c)
+
+
+
+
 
 # MOD 10 COUNTER:
 
@@ -176,6 +207,10 @@ endmodule
 ![image](https://github.com/Karthickkannansp/VLSI-LAB-EXP-4/assets/161430429/081ed0a7-d2b2-4d23-b247-0a9e1f7dd2e8)
 
 # RIPPLE COUNTER:
+
+# LOGIC DIAGRAM:
+![image](https://github.com/Karthickkannansp/VLSI-LAB-EXP-4/assets/161430429/ae10ec6c-87d9-4023-a0fd-0e82fa60bef3)
+
 
 # VERILOG CODE:
 ```
